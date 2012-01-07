@@ -1,0 +1,22 @@
+{
+  "name": "Facebook Friend Cleaner",
+  "version": "1",
+  "manifest_version": 2,
+  "description":
+    "Bulk remove and update friends on Facebook.",
+  "icons": {"48": "48.png", "128": "128.png"},
+  "permissions": [
+    "contextMenus",
+    "cookies",
+    "idle",
+    "notifications",
+    "unlimitedStorage",
+    "http://*.facebook.com/*",
+    "https://*.facebook.com/*"
+  ],
+  "content_scripts": [{
+    "matches": ["http://*.facebook.com/*", "https://*.facebook.com/*"],
+    "js": ["util.js", "content.js"],
+    "run_at": "document_end"
+  }]
+}
